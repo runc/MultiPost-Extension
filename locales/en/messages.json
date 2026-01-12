@@ -537,6 +537,10 @@
     "message": "Toutiaohao",
     "description": "Platform name for Toutiaohao"
   },
+  "platformMaimai": {
+    "message": "Maimai",
+    "description": "Platform name for Maimai"
+  },
   "optionsFeedbackPrefix": {
     "message": "Missing a platform you need?"
   },
@@ -1073,5 +1077,9 @@
   "publishAutoCloseCountdown": {
     "message": "Auto close in $1 seconds",
     "description": "Auto close countdown text for publish page"
+  },
+  "platformSubstack": {
+    "message": "Substack",
+    "description": "Substack platform name"
   }
 }
