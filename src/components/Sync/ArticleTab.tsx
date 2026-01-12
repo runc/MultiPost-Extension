@@ -31,9 +31,17 @@ interface ArticleTabProps {
   funcPublish: (data: SyncData) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   funcScraper: (url: string) => Promise<any>;
+  externalData?: {
+    title: string;
+    content: string;
+    htmlContent: string;
+    platform?: string;
+    source?: string;
+    timestamp?: number;
+  };
 }
 
-const ArticleTab: React.FC<ArticleTabProps> = ({ funcPublish, funcScraper }) => {
+const ArticleTab: React.FC<ArticleTabProps> = ({ funcPublish, funcScraper, externalData }) => {
   const [title, setTitle] = useState<string>('');
   const [digest, setDigest] = useState<string>('');
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
@@ -90,6 +98,34 @@ const ArticleTab: React.FC<ArticleTabProps> = ({ funcPublish, funcScraper }) => 
 
     loadPlatformInfos();
   }, [accountInfos, extraConfigMap]);
+
+  // Handle external data from other extensions (e.g., ima-plus-ext)
+  useEffect(() => {
+    if (externalData) {
+      console.log('Auto-filling from external data:', externalData);
+      
+      // Set title and content
+      setTitle(externalData.title || '');
+      setDigest(externalData.content || '');
+      
+      // Process HTML content if available
+      if (externalData.htmlContent) {
+        processImportedContent(externalData.htmlContent).then(({ imageFileDatas, processedContent }) => {
+          setImportedContent({
+            title: externalData.title,
+            content: processedContent,
+            originContent: externalData.htmlContent,
+            digest: externalData.content || '',
+            cover: '',
+            author: externalData.source || 'ima-clipper',
+          });
+          setImages(imageFileDatas);
+        }).catch(error => {
+          console.error('Error processing external HTML content:', error);
+        });
+      }
+    }
+  }, [externalData]);
 
   const handlePlatformChange = async (platform: string, isSelected: boolean) => {
     const newSelectedPlatforms = isSelected
@@ -329,7 +365,7 @@ const ArticleTab: React.FC<ArticleTabProps> = ({ funcPublish, funcScraper }) => 
         endContent={
           <Button
             as={Link}
-            href="https://md.multipost.app"
+            href="https://md.doocs.org/"
             target="_blank">
             {chrome.i18n.getMessage('articleEditorAlertButton')}
           </Button>

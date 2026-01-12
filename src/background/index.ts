@@ -38,7 +38,8 @@ async function initDefaultTrustedDomains() {
 
 chrome.runtime.onInstalled.addListener((object) => {
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.tabs.create({ url: 'https://multipost.app/on-install' });
+    // 首次安装时打开本地的 Options 页面而不是外部网站
+    chrome.runtime.openOptionsPage();
   }
   initDefaultTrustedDomains();
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: false });
@@ -144,7 +145,9 @@ const defaultMessageHandler = (request, sender, sendResponse) => {
     }
   }
 };
-starter(1000 * 30);
+// 方案一：完全独立模式 - 禁用API服务，不依赖外部服务器
+// 如需启用云端同步功能，取消注释下面这一行：
+// starter(1000 * 30);
 // Message Handler || 消息处理器 || END
 
 // Keep Alive || 保活机制 || START

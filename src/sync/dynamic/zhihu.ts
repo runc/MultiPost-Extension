@@ -121,19 +121,29 @@ export async function DynamicZhihu(data: SyncData) {
 
     // 发布内容
     const allButtons = document.querySelectorAll('button');
-    const sendButton = Array.from(allButtons).find((el) => el.textContent?.includes('发布'));
+    const sendButton = Array.from(allButtons).find((el) => el.textContent?.includes('发布')) as HTMLButtonElement;
     console.debug('sendButton', sendButton);
+    console.debug('data.isAutoPublish:', data.isAutoPublish);
 
     if (sendButton) {
       if (data.isAutoPublish) {
-        console.debug('sendButton clicked');
-        const clickEvent = new Event('click', { bubbles: true });
-        sendButton.dispatchEvent(clickEvent);
+        console.debug('sendButton disabled:', sendButton.disabled);
+        console.debug('sendButton aria-disabled:', sendButton.getAttribute('aria-disabled'));
+
+        // 等待按钮变为可用状态
+        let retryCount = 0;
+        while (retryCount < 10 && (sendButton.disabled || sendButton.getAttribute('aria-disabled') === 'true')) {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          retryCount++;
+        }
+
+        console.debug('尝试点击发布按钮');
+        sendButton.click();
         await new Promise((resolve) => setTimeout(resolve, 3000));
         window.location.href = 'https://www.zhihu.com/follow';
       }
     } else {
-      console.debug('未找到"发送"按钮');
+      console.debug('未找到"发送"按钮');  
     }
 
     console.debug('成功填入知乎内容和图片');

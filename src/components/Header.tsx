@@ -13,7 +13,7 @@ const Header: React.FC = () => {
             className="mr-2 w-8 h-8 rounded-full"
           />
           <a
-            href="https://multipost.app"
+            href="https://快多发.app"
             target="_blank"
             className="hover:text-blue-600">
             <h1 className="text-lg font-semibold">{chrome.i18n.getMessage('optionsTitle')}</h1>
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             color="primary"
             as="a"
             target="_blank"
-            href="https://multipost.app/dashboard"
+            href="https://快多发.app/dashboard"
             startContent={<LayoutDashboardIcon size={16} />}>
             <span className="text-sm">{chrome.i18n.getMessage('optionViewHomePageDashboard')}</span>
           </Button>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             color="primary"
             as="a"
             target="_blank"
-            href="https://multipost.app/dashboard/publish"
+            href="https://快多发.app/dashboard/publish"
             startContent={<SendIcon size={16} />}>
             <span className="text-sm">{chrome.i18n.getMessage('optionViewHomePagePublish')}</span>
           </Button>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
                   color="primary"
                   as="a"
                   target="_blank"
-                  href="https://docs.multipost.app"
+                  href="https://docs.快多发.app"
                   startContent={<BookOpenText size={16} />}>
                   <span className="text-sm">User Guide</span>
                 </Button>
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                   color="primary"
                   as="a"
                   target="_blank"
-                  href="https://docs.multipost.app/docs/api-reference"
+                  href="https://docs.快多发.app/docs/api-reference"
                   startContent={<BotIcon size={16} />}>
                   <span className="text-sm">{chrome.i18n.getMessage('optionsViewAutomation')}</span>
                 </Button>

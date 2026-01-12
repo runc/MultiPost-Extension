@@ -205,18 +205,18 @@ const Options = () => {
             className="w-full">
             <VideoTab funcPublish={funcPublish} />
           </Tab>
-          <Tab
+          {/* <Tab
             key="settings"
             title={chrome.i18n.getMessage('gSettings')}
             className="w-full">
             <SettingsTab />
-          </Tab>
-          <Tab
+          </Tab> */}
+          {/* <Tab
             key="aboutTab"
             title={chrome.i18n.getMessage('gAbout')}
             className="w-full">
             <AboutTab />
-          </Tab>
+          </Tab> */}
         </Tabs>
       </main>
       <Spacer y={8} />
@@ -225,7 +225,7 @@ const Options = () => {
         <p className="flex gap-4 justify-center items-center">
           <Button
             as="a"
-            href="https://github.com/leaper-one/Multipost-Extension/issues"
+            href="https://github.com/快多发/issues"
             target="_blank"
             rel="noopener noreferrer"
             size="sm"
@@ -237,7 +237,7 @@ const Options = () => {
             />
           </Button>
 
-          <Button
+          {/* <Button
             as="a"
             href="mailto:support@leaper.one"
             size="sm"
@@ -263,7 +263,7 @@ const Options = () => {
               />
             }>
             {chrome.i18n.getMessage('optionsFeedback') || 'Feedback'}
-          </Button>
+          </Button> */}
 
           <Popover placement="top">
             <PopoverTrigger>

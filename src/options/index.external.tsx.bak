@@ -13,6 +13,8 @@ export function getShadowContainer() {
 
 export const getShadowHostId = () => 'test-shadow';
 
+const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://multipost.app';
+
 export const getStyle = () => {
   const style = document.createElement('style');
 
@@ -20,14 +22,17 @@ export const getStyle = () => {
   return style;
 };
 
-const IndexPopup = () => {
+const Options = () => {
   useEffect(() => {
-    // 打开本地的 Options 页面（内置的发布界面）
-    chrome.runtime.openOptionsPage();
-    window.close();
+    chrome.tabs.getCurrent((tab) => {
+      chrome.tabs.create({ url: `${BASE_URL}/dashboard/publish` });
+      if (tab?.id) {
+        chrome.tabs.remove(tab.id);
+      }
+    });
   }, []);
 
   return <div></div>;
 };
 
-export default IndexPopup;
+export default Options;

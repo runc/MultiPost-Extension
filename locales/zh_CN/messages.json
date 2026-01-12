@@ -1,15 +1,15 @@
 {
   "extensionName": {
-    "message": "MultiPost",
-    "description": "Multipost Extension"
+    "message": "QuickPost",
+    "description": "QuickPost Extension"
   },
   "extensionDisplayName": {
-    "message": "MultiPost",
-    "description": "Multipost Extension"
+    "message": "QuickPost",
+    "description": "QuickPost Extension"
   },
   "extensionDescription": {
-    "message": "MultiPost 是一个帮助你在多个平台同步发布内容的工具。",
-    "description": "Multipost 是一个帮助你在多个平台同步发布内容的工具。"
+    "message": "QuickPost 是一个帮助你在多个平台同步发布内容的工具。",
+    "description": "QuickPost 是一个帮助你在多个平台同步发布内容的工具。"
   },
   "gDynamic": {
     "message": "动态",
@@ -56,7 +56,7 @@
     "description": "默认昵称文本"
   },
   "optionsTitle": {
-    "message": "Multipost",
+    "message": "快多发",
     "description": "选项页面标题"
   },
   "optionsViewDocs": {
@@ -180,8 +180,8 @@
     "description": "同步按钮失败状态文本"
   },
   "optionsLogin2SOMEren": {
-    "message": "请登录 Multipost",
-    "description": "登录 Multipost 提示"
+    "message": "请登录 QuickPost",
+    "description": "登录 QuickPost 提示"
   },
   "optionsNotBoundBilibili": {
     "message": "未绑定 B 站账号",
@@ -568,7 +568,7 @@
     "description": "清空所有已选择平台的按钮文本"
   },
   "aboutDescription": {
-    "message": "MultiPost Extension 帮助您同时将内容发布到多个平台，提高内容分发效率。"
+    "message": "QuickPost Extension 帮助您同时将内容发布到多个平台，提高内容分发效率。"
   },
   "gAbout": {
     "message": "关于"
@@ -580,7 +580,7 @@
     "message": "可信域名"
   },
   "settingsTrustedDomainsDesc": {
-    "message": "添加可信任的域名，支持通配符（例如：*.multipost.app）"
+    "message": "添加可信任的域名，支持通配符（例如：*.QuickPost.app）"
   },
   "settingsAdd": {
     "message": "添加"
@@ -750,7 +750,7 @@
     "message": "处理请求时发生错误"
   },
   "popupLogoAlt": {
-    "message": "MultiPost 图标",
+    "message": "QuickPost 图标",
     "description": "Logo 图片的替代文本"
   },
   "popupLoadingMessage": {
@@ -899,7 +899,7 @@
     "message": "保存"
   },
   "linkExtensionTitle": {
-    "message": "连接扩展到 MultiPost.app",
+    "message": "连接扩展到 QuickPost.app",
     "description": "连接扩展页面标题"
   },
   "linkExtensionReject": {
@@ -911,7 +911,7 @@
     "description": "允许连接按钮文本"
   },
   "linkExtensionSuccess": {
-    "message": "已连接到 MultiPost.app",
+    "message": "已连接到 QuickPost.app",
     "description": "连接成功提示"
   },
   "linkExtensionRejected": {
