@@ -1,6 +1,6 @@
 # MultiPost
 
-![GitHub License GitHub許可証](https://img.shields.io/github/license/leaper-one/MultiPost-Extension) ![GitHub Repo stars GitHubスター](https://img.shields.io/github/stars/leaper-one/MultiPost-Extension) ![GitHub commit activity GitHubコミット活動](https://img.shields.io/github/commit-activity/m/leaper-one/MultiPost-Extension) [![Website ウェブサイト](https://img.shields.io/website?url=https%3A%2F%2Fmultipost.app)](https://multipost.app)
+![GitHub License GitHub許可証](https://img.shields.io/github/license/runc/MultiPost-Extension) ![GitHub Repo stars GitHubスター](https://img.shields.io/github/stars/runc/MultiPost-Extension) ![GitHub commit activity GitHubコミット活動](https://img.shields.io/github/commit-activity/m/runc/MultiPost-Extension) [![Website ウェブサイト](https://img.shields.io/website?url=https%3A%2F%2Fmultipost.app)](https://multipost.app)
 
 [English](../README.md) | [中文](README-zh.md) | [日本語](README-jp.md) | [Français](README-fr.md) | [한국어](README-kr.md)
 
@@ -33,7 +33,7 @@
 ## はじめに
 - [multipost.app](https://multipost.app) - 公式ウェブサイト
 - [MultiPost ドキュメント](https://docs.multipost.app)
-- [MultiPost 記事エディター](https://md.multipost.app/) - [(リポジトリ)](https://github.com/leaper-one/multipost-wechat-markdown-editor) - 複数のプラットフォームにコンテンツを作成・投稿するためのオンラインエディター
+- [MultiPost 記事エディター](https://md.multipost.app/) - [(リポジトリ)](https://github.com/runc/multipost-wechat-markdown-editor) - 複数のプラットフォームにコンテンツを作成・投稿するためのオンラインエディター
 - [Chrome拡張機能 - ![Chrome Web Store Version Chrome ウェブストアバージョン](https://img.shields.io/chrome-web-store/v/dhohkaclnjgcikfoaacfgijgjgceofih)](https://chromewebstore.google.com/detail/multipost/dhohkaclnjgcikfoaacfgijgjgceofih) ![Chrome Web Store Users Chrome ウェブストアユーザー](https://img.shields.io/chrome-web-store/users/dhohkaclnjgcikfoaacfgijgjgceofih) ![Chrome Web Store Last Updated](https://img.shields.io/chrome-web-store/last-updated/dhohkaclnjgcikfoaacfgijgjgceofih)
 - [Edge拡張機能 - ![](https://img.shields.io/badge/dynamic/json?label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fckoiphiceimehjkolnfffgbmihoppgjg)](https://microsoftedge.microsoft.com/addons/detail/multipost/ckoiphiceimehjkolnfffgbmihoppgjg) [![](https://img.shields.io/badge/dynamic/json?label=users&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fckoiphiceimehjkolnfffgbmihoppgjg)](https://microsoftedge.microsoft.com/addons/detail/multipost/ckoiphiceimehjkolnfffgbmihoppgjg)
 
@@ -84,11 +84,11 @@ pnpm build
 
 ## Star History
 
-<a href="https://www.star-history.com/#leaper-one/MultiPost-Extension&leaper-one/multipost-wechat-markdown-editor&Date">
+<a href="https://www.star-history.com/#runc/MultiPost-Extension&runc/multipost-wechat-markdown-editor&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date" />
  </picture>
 </a>
 

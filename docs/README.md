@@ -12,6 +12,6 @@
 
 - [官方网站](https://multipost.app)
 - [官方文档](https://docs.multipost.app)
-- [GitHub 仓库](https://github.com/leaper-one/MultiPost-Extension)
+- [GitHub 仓库](https://github.com/runc/MultiPost-Extension)
 - [Chrome 扩展](https://chromewebstore.google.com/detail/multipost/dhohkaclnjgcikfoaacfgijgjgceofih)
 - [Edge 扩展](https://microsoftedge.microsoft.com/addons/detail/multipost/ckoiphiceimehjkolnfffgbmihoppgjg)

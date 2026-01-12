@@ -1,6 +1,6 @@
 # MultiPost
 
-![GitHub License Licence GitHub](https://img.shields.io/github/license/leaper-one/MultiPost-Extension) ![GitHub Repo stars Étoiles GitHub](https://img.shields.io/github/stars/leaper-one/MultiPost-Extension) ![GitHub commit activity Activité des commits GitHub](https://img.shields.io/github/commit-activity/m/leaper-one/MultiPost-Extension) [![Website Site web](https://img.shields.io/website?url=https%3A%2F%2Fmultipost.app)](https://multipost.app)
+![GitHub License Licence GitHub](https://img.shields.io/github/license/runc/MultiPost-Extension) ![GitHub Repo stars Étoiles GitHub](https://img.shields.io/github/stars/runc/MultiPost-Extension) ![GitHub commit activity Activité des commits GitHub](https://img.shields.io/github/commit-activity/m/runc/MultiPost-Extension) [![Website Site web](https://img.shields.io/website?url=https%3A%2F%2Fmultipost.app)](https://multipost.app)
 
 [English](../README.md) | [中文](README-zh.md) | [日本語](README-jp.md) | [Français](README-fr.md) | [한국어](README-kr.md)
 
@@ -33,7 +33,7 @@ Cette extension résout les difficultés des créateurs de contenu lors de la pu
 ## Pour commencer
 - [multipost.app](https://multipost.app) - Site officiel
 - [MultiPost Documentation](https://docs.multipost.app)
-- [Éditeur d'articles MultiPost](https://md.multipost.app/) - [(Dépôt)](https://github.com/leaper-one/multipost-wechat-markdown-editor) - Éditeur en ligne pour créer et publier du contenu sur plusieurs plateformes
+- [Éditeur d'articles MultiPost](https://md.multipost.app/) - [(Dépôt)](https://github.com/runc/multipost-wechat-markdown-editor) - Éditeur en ligne pour créer et publier du contenu sur plusieurs plateformes
 - [Extension Chrome - ![Chrome Web Store Version Version du Chrome Web Store](https://img.shields.io/chrome-web-store/v/dhohkaclnjgcikfoaacfgijgjgceofih)](https://chromewebstore.google.com/detail/multipost/dhohkaclnjgcikfoaacfgijgjgceofih) ![Chrome Web Store Users Utilisateurs du Chrome Web Store](https://img.shields.io/chrome-web-store/users/dhohkaclnjgcikfoaacfgijgjgceofih) ![Chrome Web Store Last Updated](https://img.shields.io/chrome-web-store/last-updated/dhohkaclnjgcikfoaacfgijgjgceofih)
 - [Extension Edge - ![](https://img.shields.io/badge/dynamic/json?label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fckoiphiceimehjkolnfffgbmihoppgjg)](https://microsoftedge.microsoft.com/addons/detail/multipost/ckoiphiceimehjkolnfffgbmihoppgjg) [![](https://img.shields.io/badge/dynamic/json?label=users&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fckoiphiceimehjkolnfffgbmihoppgjg)](https://microsoftedge.microsoft.com/addons/detail/multipost/ckoiphiceimehjkolnfffgbmihoppgjg)
 
@@ -83,11 +83,11 @@ Vous trouverez le contenu de la construction dans le dossier `build`
 Il est recommandé d'utiliser l'outil de gestion de paquets `pnpm@latest-9` avec Node.js version 20.
 
 ## Star History
-<a href="https://www.star-history.com/#leaper-one/MultiPost-Extension&leaper-one/multipost-wechat-markdown-editor&Date">
+<a href="https://www.star-history.com/#runc/MultiPost-Extension&runc/multipost-wechat-markdown-editor&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=leaper-one/MultiPost-Extension,leaper-one/multipost-wechat-markdown-editor&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=runc/MultiPost-Extension,runc/multipost-wechat-markdown-editor&type=Date" />
  </picture>
 </a>
 
