@@ -23,6 +23,10 @@
     "message": "文章",
     "description": "article"
   },
+  "gDraft": {
+    "message": "草稿",
+    "description": "draft"
+  },
   "gTitle": {
     "message": "标题",
     "description": "title"
@@ -56,7 +60,7 @@
     "description": "默认昵称文本"
   },
   "optionsTitle": {
-    "message": "快多发",
+    "message": "duofa",
     "description": "选项页面标题"
   },
   "optionsViewDocs": {
@@ -1055,5 +1059,197 @@
   "platformSubstack": {
     "message": "Substack",
     "description": "Substack 平台名称"
+  },
+  "recorderImportFromRecorder": {
+    "message": "从录屏导入",
+    "description": "从录屏插件导入视频按钮文本"
+  },
+  "recorderSelectFromRecorder": {
+    "message": "选择录屏视频",
+    "description": "录屏视频选择模态框标题"
+  },
+  "recorderSyncData": {
+    "message": "同步录屏数据",
+    "description": "同步录屏数据按钮文本"
+  },
+  "recorderHistory": {
+    "message": "录屏历史",
+    "description": "录屏历史标题"
+  },
+  "recorderNotInstalled": {
+    "message": "未检测到录屏插件",
+    "description": "未安装录屏插件时的提示"
+  },
+  "recorderNotInstalledDesc": {
+    "message": "请先安装录屏插件以使用此功能",
+    "description": "未安装录屏插件时的详细说明"
+  },
+  "recorderUseVideo": {
+    "message": "使用",
+    "description": "使用录屏视频按钮文本"
+  },
+  "recorderPreviewVideo": {
+    "message": "预览",
+    "description": "预览录屏视频按钮文本"
+  },
+  "recorderNoRecordings": {
+    "message": "暂无录屏记录",
+    "description": "没有录屏记录时的提示"
+  },
+  "recorderLoading": {
+    "message": "加载中...",
+    "description": "加载录屏列表时的状态文本"
+  },
+  "recorderSyncFailed": {
+    "message": "同步失败",
+    "description": "同步录屏数据失败时的提示"
+  },
+  "recorderPullFailed": {
+    "message": "拉取录屏视频失败",
+    "description": "拉取录屏视频失败时的提示"
+  },
+  "recorderTransferProgress": {
+    "message": "传输进度: $1%",
+    "description": "录屏视频传输进度文本"
+  },
+  "recorderTransferComplete": {
+    "message": "传输完成",
+    "description": "录屏视频传输完成提示"
+  },
+  "recorderDuration": {
+    "message": "时长",
+    "description": "视频时长标签"
+  },
+  "recorderSize": {
+    "message": "大小",
+    "description": "视频大小标签"
+  },
+  "recorderExtensionId": {
+    "message": "ngcainoampabonfpbfeklebaeoolpamm",
+    "description": "录屏插件扩展ID"
+  },
+  "recorderHasPayload": {
+    "message": "包含发布配置",
+    "description": "录屏包含payload数据的指示器"
+  },
+  "recorderHasSubtitles": {
+    "message": "包含字幕",
+    "description": "录屏包含字幕的指示器"
+  },
+  "recorderDeleteButton": {
+    "message": "删除",
+    "description": "删除录屏按钮"
+  },
+  "recorderConfirmDelete": {
+    "message": "确认删除此录屏记录？",
+    "description": "删除录屏的确认信息"
+  },
+  "recorderPreviewButton": {
+    "message": "预览",
+    "description": "预览录屏按钮"
+  },
+  "recorderPreviewPlaceholder": {
+    "message": "视频预览功能开发中",
+    "description": "视频预览占位符消息"
+  },
+  "recorderResolution": {
+    "message": "分辨率",
+    "description": "视频分辨率标签"
+  },
+  "recorderFormat": {
+    "message": "格式",
+    "description": "视频格式标签"
+  },
+  "recorderTimestamp": {
+    "message": "录制时间",
+    "description": "录制时间戳标签"
+  },
+  "recorderTags": {
+    "message": "标签",
+    "description": "录屏标签标签"
+  },
+  "recorderPullInProgress": {
+    "message": "正在拉取视频数据，请稍候...",
+    "description": "从录屏插件拉取视频时的消息"
+  },
+  "recorderPreviewFailed": {
+    "message": "预览加载失败",
+    "description": "预览视频加载失败时的提示"
+  },
+  "recorderLoadingPreview": {
+    "message": "正在加载预览...",
+    "description": "加载预览视频时的状态文本"
+  },
+  "recorderSyncingVideos": {
+    "message": "正在同步视频",
+    "description": "同步录屏视频时的进度标签"
+  },
+  "draftTitle": {
+    "message": "草稿箱",
+    "description": "草稿箱标题"
+  },
+  "draftNoDrafts": {
+    "message": "暂无草稿",
+    "description": "没有草稿时的提示"
+  },
+  "draftCreateDynamic": {
+    "message": "创建动态草稿",
+    "description": "创建动态草稿按钮"
+  },
+  "draftCreateVideo": {
+    "message": "创建视频草稿",
+    "description": "创建视频草稿按钮"
+  },
+  "draftCreateArticle": {
+    "message": "创建文章草稿",
+    "description": "创建文章草稿按钮"
+  },
+  "draftDelete": {
+    "message": "删除",
+    "description": "删除草稿按钮"
+  },
+  "draftEdit": {
+    "message": "编辑",
+    "description": "编辑草稿按钮"
+  },
+  "draftUseRecorder": {
+    "message": "从录屏导入",
+    "description": "从录屏导入草稿按钮"
+  },
+  "draftSyncFromRecorder": {
+    "message": "同步录屏数据",
+    "description": "同步录屏数据按钮"
+  },
+  "draftRecorderData": {
+    "message": "录屏数据",
+    "description": "录屏数据区域标题"
+  },
+  "draftSavedAt": {
+    "message": "保存于 $1",
+    "description": "草稿保存时间"
+  },
+  "draftTypeDynamic": {
+    "message": "动态",
+    "description": "动态类型标签"
+  },
+  "draftTypeVideo": {
+    "message": "视频",
+    "description": "视频类型标签"
+  },
+  "draftTypeArticle": {
+    "message": "文章",
+    "description": "文章类型标签"
+  },
+  "draftConfirmDelete": {
+    "message": "确认删除此草稿？",
+    "description": "删除草稿确认提示"
+  },
+  "draftBox": {
+    "message": "草稿箱",
+    "description": "草稿箱区域标题"
+  },
+  "draftEmptyDesc": {
+    "message": "草稿会自动保存，您也可以手动创建",
+    "description": "草稿箱为空时的描述"
   }
 }

@@ -69,6 +69,9 @@
     "default_locale": "zh_CN",
     "host_permissions": ["https://*/*", "http://127.0.0.1/*", "http://localhost/*"],
     "permissions": ["activeTab", "tabs", "background", "scripting", "tabGroups", "sidePanel"],
+    "externally_connectable": {
+      "ids": ["ngcainoampabonfpbfeklebaeoolpamm"]
+    },
     "web_accessible_resources": [
       {
         "resources": ["assets/icon.png"],

@@ -24,6 +24,7 @@ import { ACCOUNT_INFO_STORAGE_KEY } from "~sync/account";
 import { type FileData, type SyncData, getPlatformInfos } from "~sync/common";
 import type { PlatformInfo } from "~sync/common";
 import { EXTRA_CONFIG_STORAGE_KEY } from "~sync/extraconfig";
+import { DraftList } from "./DraftList";
 import PlatformCheckbox from "./PlatformCheckbox";
 
 // Constants
@@ -313,7 +314,7 @@ const DynamicTab: React.FC<DynamicTabProps> = ({ funcPublish }) => {
   return (
     <div className="flex flex-col gap-4" ref={dropAreaRef}>
       <div className="flex flex-col gap-4 md:flex-row">
-        <div className="flex flex-col w-full gap-4 md:w-1/2">
+        <div className="flex flex-col w-full gap-4 md:w-2/3">
           <Card className="shadow-none bg-default-50">
             <CardHeader className="flex flex-col gap-4">
               <Input
@@ -343,7 +344,7 @@ const DynamicTab: React.FC<DynamicTabProps> = ({ funcPublish }) => {
 
             <CardFooter>
               <div className="flex items-center justify-between w-full">
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <input
                     type="file"
                     ref={imageInputRef}
@@ -436,9 +437,33 @@ const DynamicTab: React.FC<DynamicTabProps> = ({ funcPublish }) => {
               </CardBody>
             </Card>
           )}
+
+          {/* 草稿箱分区 - 移到左侧内容编辑下方 */}
+          <DraftList
+            type="DYNAMIC"
+            showRecorderSection={false}
+            onEditDraft={(draft) => {
+              // 从草稿加载到编辑区
+              setFormState((prev) => ({
+                ...prev,
+                title: draft.title,
+                content: draft.content,
+                images: (draft as any).images || [],
+                videos: (draft as any).videos || [],
+              }));
+            }}
+            onUseRecording={(recording) => {
+              // 动态内容通常不使用录屏，但可以作为视频添加
+              setFormState((prev) => ({
+                ...prev,
+                title: recording.title || prev.title,
+                content: recording.description || prev.content,
+              }));
+            }}
+          />
         </div>
 
-        <div className="flex flex-col w-full gap-4 md:w-1/2">
+        <div className="flex flex-col w-full gap-4 md:w-1/3">
           <div className="flex flex-col gap-4 p-4 rounded-lg bg-default-50">
             <div className="flex items-center justify-between mb-2">
               <Switch

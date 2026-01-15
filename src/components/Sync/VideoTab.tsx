@@ -18,11 +18,11 @@ import { Icon } from "@iconify/react";
 import { Storage } from "@plasmohq/storage";
 import { useStorage } from "@plasmohq/storage/hook";
 import { ACCOUNT_INFO_STORAGE_KEY } from "~sync/account";
-// import ReactPlayer from 'react-player';
 import type { FileData, SyncData } from "~sync/common";
 import type { PlatformInfo } from "~sync/common";
 import { getPlatformInfos } from "~sync/common";
 import { EXTRA_CONFIG_STORAGE_KEY } from "~sync/extraconfig";
+import { DraftList } from "./DraftList";
 import PlatformCheckbox from "./PlatformCheckbox";
 
 interface VideoTabProps {
@@ -168,7 +168,7 @@ const VideoTab: React.FC<VideoTabProps> = ({ funcPublish }) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 md:flex-row">
-        <div className="flex flex-col w-full gap-4 md:w-1/2">
+        <div className="flex flex-col w-full gap-4 md:w-2/3">
           <Card className="shadow-none bg-default-50">
             <CardHeader className="flex flex-col gap-4">
               <Input
@@ -198,7 +198,7 @@ const VideoTab: React.FC<VideoTabProps> = ({ funcPublish }) => {
 
             <CardFooter>
               <div className="flex items-center justify-between w-full">
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <input
                     type="file"
                     ref={fileInputRef}
@@ -245,9 +245,43 @@ const VideoTab: React.FC<VideoTabProps> = ({ funcPublish }) => {
               </CardBody>
             </Card>
           )}
+
+          {/* 草稿箱分区 - 移到左侧内容编辑下方 */}
+          <DraftList
+            type="VIDEO"
+            onEditDraft={(draft) => {
+              // 从草稿加载到编辑区
+              setTitle(draft.title);
+              setContent(draft.content);
+              setVideoFile((draft as any).video);
+            }}
+            onUseRecording={async (recording) => {
+              // 从录屏插件拉取视频数据
+              try {
+                const RECORDER_EXTENSION_ID = chrome.i18n.getMessage("recorderExtensionId");
+                const resp = await chrome.runtime.sendMessage(RECORDER_EXTENSION_ID, {
+                  type: "RECORDER_PULL_RECORDING",
+                  recordingId: recording.id,
+                });
+
+                if (resp?.ok) {
+                  // 这里会通过Port接收视频，暂时使用占位符
+                  setTitle(recording.title);
+                  setContent(recording.description || "");
+                  // TODO: 通过Port接收实际视频blob
+                  alert(chrome.i18n.getMessage("recorderPullInProgress") || "正在拉取视频数据，请稍候...");
+                } else {
+                  alert(chrome.i18n.getMessage("recorderPullFailed") || "拉取视频失败");
+                }
+              } catch (error) {
+                console.error("拉取录屏失败:", error);
+                alert(chrome.i18n.getMessage("recorderPullFailed") || "拉取视频失败");
+              }
+            }}
+          />
         </div>
 
-        <div className="flex flex-col w-full gap-4 md:w-1/2">
+        <div className="flex flex-col w-full gap-4 md:w-1/3">
           <div className="flex flex-col gap-4 p-4 rounded-lg bg-default-50">
             <div className="flex flex-col gap-2">
               <div className="flex items-center justify-between mb-2">

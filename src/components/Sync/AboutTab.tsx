@@ -21,7 +21,7 @@ const AboutTab: React.FC = () => {
         <CardBody className="gap-4">
           <Button
             as={Link}
-            href="https://快多发.app/about"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             variant="flat"

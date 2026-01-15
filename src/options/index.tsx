@@ -1,55 +1,41 @@
 // You can rename this file to index.tsx to use this file as the entry point
 // Then you can develop the extension option page as UI
 
-import '~style.css';
-import React, { useState } from 'react';
-import { HeroUIProvider } from '@heroui/react';
-import {
-  Tabs,
-  Tab,
-  Spacer,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  Button,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from '@heroui/react';
-import { Icon } from '@iconify/react';
-import { ExternalLink } from 'lucide-react';
-import cssText from 'data-text:~style.css';
-import Header from '~/components/Header';
-import DynamicTab from '~/components/Sync/DynamicTab';
-import VideoTab from '~/components/Sync/VideoTab';
-import AboutTab from '~/components/Sync/AboutTab';
-import { type SyncData, createTabsForPlatforms, injectScriptsToTabs } from '~sync/common';
-import SettingsTab from '~components/Sync/SettingsTab';
-import ArticleTab from '~components/Sync/ArticleTab';
-import { refreshAllAccountInfo } from '~sync/account';
+import "~style.css";
+import cssText from "data-text:~style.css";
+import { HeroUIProvider } from "@heroui/react";
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Spacer } from "@heroui/react";
+import { Icon } from "@iconify/react";
+import { ExternalLink } from "lucide-react";
+import React, { useState } from "react";
+import Header from "~/components/Header";
+import DynamicTab from "~/components/Sync/DynamicTab";
+import VideoTab from "~/components/Sync/VideoTab";
+import ArticleTab from "~components/Sync/ArticleTab";
+import DraftTab from "~components/Sync/DraftTab";
+import { refreshAllAccountInfo } from "~sync/account";
+import { type SyncData, createTabsForPlatforms, injectScriptsToTabs } from "~sync/common";
 
 /**
  * Get the shadow container element for styling
  * @returns {Element} The shadow container element
  */
 export function getShadowContainer() {
-  return document.querySelector('#test-shadow').shadowRoot.querySelector('#plasmo-shadow-container');
+  return document.querySelector("#test-shadow").shadowRoot.querySelector("#plasmo-shadow-container");
 }
 
 /**
  * Get the shadow host ID
  * @returns {string} The shadow host ID
  */
-export const getShadowHostId = () => 'test-shadow';
+export const getShadowHostId = () => "test-shadow";
 
 /**
  * Get the style element with injected CSS
  * @returns {HTMLStyleElement} The style element
  */
 export const getStyle = () => {
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.textContent = cssText;
   return style;
 };
@@ -62,6 +48,7 @@ export const getStyle = () => {
 const Options = () => {
   const [isReady, setIsReady] = useState(false);
   const [hashParams, setHashParams] = useState<Record<string, any>>({});
+  const [selectedTab, setSelectedTab] = useState("dynamic");
   // 独立模式：默认不显示外部Web应用推广弹窗
   const [isWebAppModalOpen, setIsWebAppModalOpen] = useState(false);
 
@@ -70,20 +57,25 @@ const Options = () => {
    * Sets the page title and processes URL hash parameters
    */
   React.useEffect(() => {
-    document.title = chrome.i18n.getMessage('extensionDisplayName');
+    document.title = chrome.i18n.getMessage("extensionDisplayName");
 
     const hash = window.location.hash.slice(1);
 
     // Parse hash parameters from URL
     const params = {};
-    hash.split('&').forEach((param) => {
-      const [key, value] = param.split('=');
+    hash.split("&").forEach((param) => {
+      const [key, value] = param.split("=");
       if (key && value) {
         params[key] = decodeURIComponent(value);
       }
     });
     setHashParams(params);
     setIsReady(true);
+
+    // Set initial tab from URL hash
+    if (params.tab) {
+      setSelectedTab(params.tab);
+    }
 
     refreshAllAccountInfo();
   }, []);
@@ -99,17 +91,17 @@ const Options = () => {
       chrome.storage.local.get([dataKey], (result) => {
         if (result[dataKey]) {
           const externalData = result[dataKey];
-          console.log('Received external data:', externalData);
-          
+          console.log("Received external data:", externalData);
+
           // Store in state to pass to ArticleTab
-          setHashParams(prev => ({
+          setHashParams((prev) => ({
             ...prev,
-            externalData: externalData
+            externalData: externalData,
           }));
 
           // Clean up storage after retrieval
           chrome.storage.local.remove([dataKey], () => {
-            console.log('Cleaned up storage key:', dataKey);
+            console.log("Cleaned up storage key:", dataKey);
           });
         }
       });
@@ -121,7 +113,7 @@ const Options = () => {
    * @param {SyncData} data - The data to be published including content and target platforms
    */
   const funcPublish = async (data: SyncData) => {
-    console.log('funcPublish', data);
+    console.log("funcPublish", data);
     if (Array.isArray(data.platforms) && data.platforms.length > 0) {
       createTabsForPlatforms(data)
         .then(async (tabs) => {
@@ -129,7 +121,7 @@ const Options = () => {
 
           // Notify tabs manager about new tabs
           chrome.runtime.sendMessage({
-            type: 'MULTIPOST_EXTENSION_TABS_MANAGER_REQUEST_ADD_TABS',
+            type: "MULTIPOST_EXTENSION_TABS_MANAGER_REQUEST_ADD_TABS",
             data: data,
             tabs: tabs,
           });
@@ -143,10 +135,10 @@ const Options = () => {
           }
         })
         .catch((error) => {
-          console.error('Error creating tabs or groups:', error);
+          console.error("Error creating tabs or groups:", error);
         });
     } else {
-      console.error('No valid platforms specified');
+      console.error("No valid platforms specified");
     }
   };
 
@@ -159,7 +151,7 @@ const Options = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const funcScraper = async (url: string): Promise<any> => {
     if (!url) {
-      throw new Error('No valid URL provided');
+      throw new Error("No valid URL provided");
     }
 
     return new Promise(async (resolve, reject) => {
@@ -168,17 +160,17 @@ const Options = () => {
         const newTab = await chrome.tabs.create({ url, active: false });
 
         if (!newTab.id) {
-          throw new Error('Failed to create new tab');
+          throw new Error("Failed to create new tab");
         }
 
         await chrome.tabs.update(newTab.id, { active: true });
 
         // Listen for tab load completion to start scraping
         const listener = (tabId: number, info: chrome.tabs.TabChangeInfo) => {
-          if (tabId === newTab.id && info.status === 'complete') {
+          if (tabId === newTab.id && info.status === "complete") {
             chrome.tabs.onUpdated.removeListener(listener);
             chrome.tabs
-              .sendMessage(newTab.id!, { type: 'MULTIPOST_EXTENSION_REQUEST_SCRAPER_START' })
+              .sendMessage(newTab.id!, { type: "MULTIPOST_EXTENSION_REQUEST_SCRAPER_START" })
               .then(async (scraperResult) => {
                 if (currentTab?.id) {
                   await chrome.tabs.update(currentTab.id, { active: true });
@@ -192,8 +184,8 @@ const Options = () => {
 
         chrome.tabs.onUpdated.addListener(listener);
       } catch (error) {
-        console.error('Scraper operation error:', error);
-        reject(new Error('Scraper operation failed'));
+        console.error("Scraper operation error:", error);
+        reject(new Error("Scraper operation failed"));
       }
     });
   };
@@ -201,70 +193,41 @@ const Options = () => {
   if (!isReady) {
     return null;
   }
+
+  const renderTabContent = () => {
+    switch (selectedTab) {
+      case "dynamic":
+        return <DynamicTab funcPublish={funcPublish} />;
+      case "article":
+        return (
+          <ArticleTab funcPublish={funcPublish} funcScraper={funcScraper} externalData={hashParams.externalData} />
+        );
+      case "video":
+        return <VideoTab funcPublish={funcPublish} />;
+      case "draft":
+        return <DraftTab funcPublish={funcPublish} funcScraper={funcScraper} />;
+      default:
+        return <DynamicTab funcPublish={funcPublish} />;
+    }
+  };
+
   return (
     <HeroUIProvider>
-      <Header />
-      <main className="p-4 mx-auto w-full max-w-3xl md:max-w-screen-xl sm:max-w-7xl">
-        <Tabs
-          aria-label="sync publish"
-          defaultSelectedKey={hashParams.tab || 'dynamic'}
-          isVertical
-          variant="light"
-          size="lg"
-          color="primary"
-          className="h-full">
-          <Tab
-            key="dynamic"
-            title={chrome.i18n.getMessage('gDynamic')}
-            className="w-full">
-            <DynamicTab funcPublish={funcPublish} />
-          </Tab>
-          <Tab
-            key="article"
-            title={chrome.i18n.getMessage('gArticle')}
-            className="w-full">
-            <ArticleTab
-              funcPublish={funcPublish}
-              funcScraper={funcScraper}
-              externalData={hashParams.externalData}
-            />
-          </Tab>
-          <Tab
-            key="video"
-            title={chrome.i18n.getMessage('gVideo')}
-            className="w-full">
-            <VideoTab funcPublish={funcPublish} />
-          </Tab>
-          {/* <Tab
-            key="settings"
-            title={chrome.i18n.getMessage('gSettings')}
-            className="w-full">
-            <SettingsTab />
-          </Tab>
-          <Tab
-            key="aboutTab"
-            title={chrome.i18n.getMessage('gAbout')}
-            className="w-full">
-            <AboutTab />
-          </Tab> */}
-        </Tabs>
-      </main>
+      <Header selectedTab={selectedTab} onTabChange={setSelectedTab} />
+      <main className="p-4 mx-auto w-full max-w-3xl md:max-w-screen-xl sm:max-w-7xl">{renderTabContent()}</main>
       <Spacer y={8} />
       <footer className="text-sm text-center">
-        <p className="mb-4 text-gray-600">{chrome.i18n.getMessage('optionsContactPrefix')}</p>
+        <p className="mb-4 text-gray-600">{chrome.i18n.getMessage("optionsContactPrefix")}</p>
         <p className="flex gap-4 justify-center items-center">
           <Button
             as="a"
-            href="https://github.com/快多发/issues"
+            href="https://github.com/runc/MultiPost-Extension"
             target="_blank"
             rel="noopener noreferrer"
             size="sm"
             isIconOnly
             className="text-white bg-[#24292F] hover:bg-[#24292F]/90">
-            <Icon
-              icon="mdi:github"
-              className="size-5"
-            />
+            <Icon icon="mdi:github" className="size-5" />
           </Button>
 
           {/* <Button
@@ -344,13 +307,13 @@ const Options = () => {
         placement="center"
         backdrop="blur">
         <ModalContent>
-          <ModalHeader>{chrome.i18n.getMessage('webAppModalTitle')}</ModalHeader>
+          <ModalHeader>{chrome.i18n.getMessage("webAppModalTitle")}</ModalHeader>
           <ModalBody>
             <div className="space-y-4">
-              <p className="text-sm text-gray-600">{chrome.i18n.getMessage('webAppModalDescription')}</p>
+              <p className="text-sm text-gray-600">{chrome.i18n.getMessage("webAppModalDescription")}</p>
               <div className="flex justify-center items-center">
                 <img
-                  src={chrome.runtime.getURL('assets/icon.png')}
+                  src={chrome.runtime.getURL("assets/icon.png")}
                   alt="MultiPost"
                   className="w-24 h-24 rounded-xl shadow-md"
                 />
@@ -358,10 +321,8 @@ const Options = () => {
             </div>
           </ModalBody>
           <ModalFooter>
-            <Button
-              variant="light"
-              onPress={() => setIsWebAppModalOpen(false)}>
-              {chrome.i18n.getMessage('webAppModalLater')}
+            <Button variant="light" onPress={() => setIsWebAppModalOpen(false)}>
+              {chrome.i18n.getMessage("webAppModalLater")}
             </Button>
             <Button
               variant="solid"
@@ -372,7 +333,7 @@ const Options = () => {
               rel="noopener noreferrer"
               startContent={<ExternalLink className="size-4" />}
               onPress={() => setIsWebAppModalOpen(false)}>
-              {chrome.i18n.getMessage('webAppModalGo')}
+              {chrome.i18n.getMessage("webAppModalGo")}
             </Button>
           </ModalFooter>
         </ModalContent>

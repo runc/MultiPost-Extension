@@ -23,6 +23,10 @@
     "message": "Article",
     "description": "article"
   },
+  "gDraft": {
+    "message": "Draft",
+    "description": "draft"
+  },
   "gTitle": {
     "message": "Title",
     "description": "title"
@@ -56,7 +60,7 @@
     "description": "Default nickname text"
   },
   "optionsTitle": {
-    "message": "快多发",
+    "message": "duo",
     "description": "Options page title"
   },
   "optionsViewDocs": {
@@ -1081,5 +1085,197 @@
   "platformSubstack": {
     "message": "Substack",
     "description": "Substack platform name"
+  },
+  "recorderImportFromRecorder": {
+    "message": "Import from Recorder",
+    "description": "Button text to import video from recorder extension"
+  },
+  "recorderSelectFromRecorder": {
+    "message": "Select Screen Recording",
+    "description": "Modal title for selecting screen recording"
+  },
+  "recorderSyncData": {
+    "message": "Sync Recordings",
+    "description": "Button text to sync recording data"
+  },
+  "recorderHistory": {
+    "message": "Recording History",
+    "description": "Recording history title"
+  },
+  "recorderNotInstalled": {
+    "message": "Recorder Extension Not Detected",
+    "description": "Message when recorder extension is not installed"
+  },
+  "recorderNotInstalledDesc": {
+    "message": "Please install the recorder extension first to use this feature",
+    "description": "Detailed description when recorder extension is not installed"
+  },
+  "recorderUseVideo": {
+    "message": "Use",
+    "description": "Button text to use recording video"
+  },
+  "recorderPreviewVideo": {
+    "message": "Preview",
+    "description": "Button text to preview recording video"
+  },
+  "recorderNoRecordings": {
+    "message": "No recordings found",
+    "description": "Message when no recordings are available"
+  },
+  "recorderLoading": {
+    "message": "Loading...",
+    "description": "Loading state text for recording list"
+  },
+  "recorderSyncFailed": {
+    "message": "Sync failed",
+    "description": "Error message when sync fails"
+  },
+  "recorderPullFailed": {
+    "message": "Failed to pull recording video",
+    "description": "Error message when pulling recording video fails"
+  },
+  "recorderTransferProgress": {
+    "message": "Transfer progress: $1%",
+    "description": "Transfer progress text for recording video"
+  },
+  "recorderTransferComplete": {
+    "message": "Transfer complete",
+    "description": "Transfer complete message"
+  },
+  "recorderDuration": {
+    "message": "Duration",
+    "description": "Video duration label"
+  },
+  "recorderSize": {
+    "message": "Size",
+    "description": "Video size label"
+  },
+  "recorderExtensionId": {
+    "message": "ngcainoampabonfpbfeklebaeoolpamm",
+    "description": "Recorder extension ID"
+  },
+  "recorderHasPayload": {
+    "message": "Has publish configuration",
+    "description": "Indicator that recording has payload data"
+  },
+  "recorderHasSubtitles": {
+    "message": "Has subtitles",
+    "description": "Indicator that recording has subtitles"
+  },
+  "recorderDeleteButton": {
+    "message": "Delete",
+    "description": "Button to delete a recording"
+  },
+  "recorderConfirmDelete": {
+    "message": "Are you sure you want to delete this recording?",
+    "description": "Confirmation message for deleting a recording"
+  },
+  "recorderPreviewButton": {
+    "message": "Preview",
+    "description": "Button to preview a recording"
+  },
+  "recorderPreviewPlaceholder": {
+    "message": "Video preview feature in development",
+    "description": "Placeholder message for video preview"
+  },
+  "recorderResolution": {
+    "message": "Resolution",
+    "description": "Video resolution label"
+  },
+  "recorderFormat": {
+    "message": "Format",
+    "description": "Video format label"
+  },
+  "recorderTimestamp": {
+    "message": "Recorded at",
+    "description": "Recording timestamp label"
+  },
+  "recorderTags": {
+    "message": "Tags",
+    "description": "Recording tags label"
+  },
+  "recorderPullInProgress": {
+    "message": "Pulling video data, please wait...",
+    "description": "Message when pulling video from recorder"
+  },
+  "recorderPreviewFailed": {
+    "message": "Failed to load preview",
+    "description": "Error message when preview fails to load"
+  },
+  "recorderLoadingPreview": {
+    "message": "Loading preview...",
+    "description": "Status text when loading video preview"
+  },
+  "recorderSyncingVideos": {
+    "message": "Syncing videos",
+    "description": "Progress label when syncing recording videos"
+  },
+  "draftTitle": {
+    "message": "Drafts",
+    "description": "Drafts title"
+  },
+  "draftNoDrafts": {
+    "message": "No drafts yet",
+    "description": "Message when no drafts"
+  },
+  "draftCreateDynamic": {
+    "message": "Create Dynamic Draft",
+    "description": "Create dynamic draft button"
+  },
+  "draftCreateVideo": {
+    "message": "Create Video Draft",
+    "description": "Create video draft button"
+  },
+  "draftCreateArticle": {
+    "message": "Create Article Draft",
+    "description": "Create article draft button"
+  },
+  "draftDelete": {
+    "message": "Delete",
+    "description": "Delete draft button"
+  },
+  "draftEdit": {
+    "message": "Edit",
+    "description": "Edit draft button"
+  },
+  "draftUseRecorder": {
+    "message": "Import from Recorder",
+    "description": "Import draft from recorder button"
+  },
+  "draftSyncFromRecorder": {
+    "message": "Sync Recorder Data",
+    "description": "Sync recorder data button"
+  },
+  "draftRecorderData": {
+    "message": "Recorder Data",
+    "description": "Recorder data section title"
+  },
+  "draftSavedAt": {
+    "message": "Saved at $1",
+    "description": "Draft saved time"
+  },
+  "draftTypeDynamic": {
+    "message": "Dynamic",
+    "description": "Dynamic type label"
+  },
+  "draftTypeVideo": {
+    "message": "Video",
+    "description": "Video type label"
+  },
+  "draftTypeArticle": {
+    "message": "Article",
+    "description": "Article type label"
+  },
+  "draftConfirmDelete": {
+    "message": "Confirm to delete this draft?",
+    "description": "Delete draft confirmation"
+  },
+  "draftBox": {
+    "message": "Draft Box",
+    "description": "Draft box section title"
+  },
+  "draftEmptyDesc": {
+    "message": "Drafts are auto-saved, or you can create manually",
+    "description": "Empty draft box description"
   }
 }
